@@ -10,13 +10,13 @@ const {
 
 songs.get("/", async (_, res) => {
   const allSongs = await getAllSongs();
-  console.log(allSongs);
+  console.log("GET request to /songs", allSongs);
   res.status(200).json(allSongs);
 });
 
 songs.get("/:id", async (req, res) => {
   const song = await getSong(req.params.id);
-  if (song) {
+  if (song.id) {
     res.status(200).json(song);
   } else {
     res.status(404).json({ Error: `Page not found!` });
@@ -46,7 +46,7 @@ songs.post("/", async (request, response) => {
 songs.delete("/:id", async (request, response) => {
   console.log("DELETE request to /songs/:id");
   const deletedSong = await deleteSong(request.params.id);
-  if (deletedSong) {
+  if (deletedSong.id) {
     response.status(200).json(deletedSong);
   } else {
     res.status(404).json({ Error: `Page not found!` });

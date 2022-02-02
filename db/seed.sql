@@ -12,6 +12,3 @@ VALUES
 ('Moods', 'Scorey', 'Single', '2:19', FALSE),
 ('Heat Waves', 'Glass Animals', 'Dreamland', '3:59', TRUE),
 ('Cold Heart(PNAU Remix)', 'Elton John & Dua Lipa', 'Single', '3:23', TRUE);
-
--- INSERT INTO playlists (myPlaylist) 
--- VALUES ('Smoken Out The Window');

@@ -5,13 +5,7 @@ CREATE DATABASE tunes_dev;
 \c tunes_dev;
 
 
-CREATE TABLE playlists (
-    id SERIAL PRIMARY KEY,
-    myPlaylist TEXT NOT NULL
-);
-
-
-CREATE TABLE songs(
+CREATE TABLE songs (
     id SERIAL PRIMARY KEY, 
     name TEXT NOT NULL, 
     artist TEXT NOT NULL,
@@ -19,3 +13,5 @@ CREATE TABLE songs(
     time TEXT NOT NULL,
     is_favorite BOOLEAN
 );
+
+
