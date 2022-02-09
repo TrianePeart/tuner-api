@@ -10,7 +10,7 @@ const {
 
 songs.get("/", async (_, res) => {
   const allSongs = await getAllSongs();
-  console.log("GET request to /songs", allSongs);
+  // console.log("GET request to /songs", allSongs);
   res.status(200).json(allSongs);
 });
 
@@ -54,7 +54,7 @@ songs.delete("/:id", async (request, response) => {
 });
 
 songs.put("/:id", async (request, response) => {
-  console.log("UPDATE request to /songs/:id");
+  // console.log("UPDATE request to /songs/:id");
   const updatedSong = await updateSong(request.params.id, request.body);
   if (updatedSong.id) {
     response.status(200).json(updatedSong);

@@ -14,4 +14,15 @@ CREATE TABLE songs (
     is_favorite BOOLEAN
 );
 
+CREATE TABLE playlist (
+    id SERIAL PRIMARY KEY,
+    playlist_name TEXT NOT NULL,
+    user_notes TEXT
+);
 
+CREATE TABLE playlist_songs (
+    id SERIAL PRIMARY KEY,
+    playlist_id INTEGER REFERENCES playlist (id)
+    ON DELETE CASCADE,
+    song_id INTEGER REFERENCES songs (id)
+);
