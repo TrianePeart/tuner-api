@@ -19,7 +19,7 @@ songs.get("/:id", async (req, res) => {
   if (song.id) {
     res.status(200).json(song);
   } else {
-    res.status(404).json({ Error: `Page not found!` });
+    res.status(404).json({ Error: "Not Found!" });
   }
 });
 
@@ -44,12 +44,12 @@ songs.post("/", async (request, response) => {
 });
 
 songs.delete("/:id", async (request, response) => {
-  console.log("DELETE request to /songs/:id");
+  // console.log("DELETE request to /songs/:id");
   const deletedSong = await deleteSong(request.params.id);
   if (deletedSong.id) {
     response.status(200).json(deletedSong);
   } else {
-    res.status(404).json({ Error: `Page not found!` });
+    response.status(404).json({ Error: `Page not found!` });
   }
 });
 

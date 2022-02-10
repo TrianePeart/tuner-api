@@ -7,8 +7,10 @@ app.use(cors());
 app.use(express.json());
 
 const songsController = require("./controllers/songsController");
+const playlistController = require("./controllers/playlistController");
 
 app.use("/songs", songsController);
+app.use("/playlist", playlistController);
 
 app.get("/", (request, response) => {
   response.send("Welcome to Tuner App");
